@@ -1,0 +1,33 @@
+{
+  "name": "mqtt-alert-sender",
+  "version": "1.0.0",
+  "description": "MQTT utlity for checking if published values are in valid range",
+  "main": "mqttAlertSender.js",
+  "dependencies": {
+    "argparse": "^1.0.10",
+    "fs": "0.0.1-security",
+    "mqtt": "^2.15.1",
+    "moment-timezone": "^0.5.17"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "test": "nodemon mqttAlertSender.js -c ../CONFIG/mqttAlertSender/config.json",
+    "start": "node mqttAlertSender.js -c ../CONFIG/mqttAlertSender/config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakterian/mqttAlertSender.git"
+  },
+  "keywords": [
+    "mqtt-check-payload",
+    "mqtt-validation"
+  ],
+  "author": "Marcin bakterian@protonmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bakterian/mqttAlertSender/issues"
+  },
+  "homepage": "https://github.com/bakterian/mqttAlertSender#readme"
+}

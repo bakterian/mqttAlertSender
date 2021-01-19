@@ -1,0 +1,63 @@
+{
+"time": {
+	"zone": "Europe/Warsaw", 
+	"fotmat":"YYYY-MM-DD HH:mm:ss ZZ"
+  },
+  "broker": {
+    "url": "<Broker URL>",
+    "options": {
+      "port": "<broker PORT>",
+      "username": "<Broker User>",
+      "password": "<Broker Password>",
+      "protocolVersion": 4
+    }
+  },
+  "topicsToWatch": [
+    {
+      "topicId"                 : "<watched topic #1>",
+      "monitorSettings": [
+        {
+          "keyId"             : "<KeyMonitored in this topic>",
+          "verficationDefinitions" :
+          {
+            "numericalComparison" :
+            [
+              {
+                "operationType" : "<mostly dealing with floats for now only: <, > supported>",
+                "boundryValue"  : "<float thershold value>"
+              }
+            ],
+            "exactStrMatch" : [ ]
+          }
+        }
+      ]
+    },
+    {
+      "topicId"                 : "<watched topic #2>",
+      "monitorSettings": [
+        {
+          "keyId"             : "<KeyMonitored in this topic #2>",
+          "verficationDefinitions" :
+          {
+            "numericalComparison" : [ ],
+            "exactStrMatch" : 
+            [
+              {
+                "toleratedValues" : ["5.00", "22.00", "53.00"]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "loggerOptions" : {
+   "logLevelString"          :  "<Possible values: notset, info, debug, warning, error, critical>",
+   "sinkThrottlerNeeded"     :  "<boolean saying if logging throttle to be activated i.e not to overflow a mail inbox with debug infos>",
+   "throttlerActDurationMs"  :  "<debounce time for logged messages, next message to be logged not sooner than in .... ms>",
+   "sendGridApiKey"	     :  "<as mail logging using send grid will be used the unique api key is need for the REST connection>",
+   "addressee"	             :  "<email destination address>",
+   "sender"	             :  "<sender e-mail this should be a verified domain e-mail autherwise the messages will lakely be identified as spam>",
+   "subject"	             :  "<e-mail topic>"
+  }
+}
